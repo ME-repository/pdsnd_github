@@ -175,8 +175,8 @@ def trip_duration_stats(df):
     print('Total time of travel is {} seconds'.format(tot_trav_time))
     # express total travel time in hour:min:sec
     # Source: https://www.kite.com/python/answers/how-to-convert-seconds-to-hours,-minutes,-and-seconds-in-python
-    tot_trav_time_convert = datetime.timedelta(seconds=int(tot_trav_time))
-    print('Total time of travel in hour:min:sec is {}'.format(tot_trav_time_convert))
+    convert_TotTravTime = datetime.timedelta(seconds=int(tot_trav_time))
+    print('Total time of travel in hour:min:sec is {}'.format(convert_TotTravTime))
 
     # TO DO: display mean travel time
     mean_trav_time = df['Trip Duration'].mean()
