@@ -40,7 +40,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington).
     # HINT: Use a while loop to handle invalid inputs
-    max_error = 3
+    maxError = 3
     city = ''
     while city.lower() not in CITY_DATA.keys():
         print("Enter city's name: Choose from:")
@@ -55,7 +55,7 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ''
     count = 0
-    while month.lower() not in (['all', 'january', 'february', 'march', 'april', 'may', 'june']) and count < max_error:
+    while month.lower() not in (['all', 'january', 'february', 'march', 'april', 'may', 'june']) and count < maxError:
         month = input("Enter the month name: january to june \n")
         if month.lower() not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
             print("You may want to try again.")
@@ -63,7 +63,7 @@ def get_filters():
         else:
             month = month.lower()
 
-    if count == max_error:
+    if count == maxError:
         print('max number of errors reached.')
         print('no filter applied for month; month = all')
         month = 'all'
@@ -72,7 +72,7 @@ def get_filters():
     day = ''
     count = 0
     while day.lower() not in (
-            ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']) and count < max_error:
+            ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']) and count < maxError:
         day = input("Enter the day of the week.\n")
         if day.lower() not in ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']:
             print("You may want to try again.\n")
@@ -82,7 +82,7 @@ def get_filters():
         else:
             day = day.title()
 
-    if count == max_error:
+    if count == maxError:
         print('max number of errors reached.')
         print('no filter applied for day of the week; day = all')
         day = 'all'
@@ -193,8 +193,8 @@ def trip_duration_stats(df):
     print('Total time of travel is {} seconds'.format(tot_trav_time))
     # express total travel time in hour:min:sec
     # Source: https://www.kite.com/python/answers/how-to-convert-seconds-to-hours,-minutes,-and-seconds-in-python
-    tot_trav_time_convert = datetime.timedelta(seconds=int(tot_trav_time))
-    print('Total time of travel in hour:min:sec is {}'.format(tot_trav_time_convert))
+    convert_TotTravTime = datetime.timedelta(seconds=int(tot_trav_time))
+    print('Total time of travel in hour:min:sec is {}'.format(convert_TotTravTime))
 
     # TO DO: display mean travel time
     mean_trav_time = df['Trip Duration'].mean()
@@ -215,8 +215,8 @@ def user_stats(df, city):
     start_time = time.time()
 
     # TO DO: Display counts of user types
-    user_types = df['User Type'].value_counts()
-    print('User types are as follows:\n{}'.format(user_types))
+    userTypes = df['User Type'].value_counts()
+    print('User types are as follows:\n{}'.format(userTypes))
 
     # TO DO: Display counts of gender
     if city != 'washington':
