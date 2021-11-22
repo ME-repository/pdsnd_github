@@ -22,7 +22,7 @@ def get_filters():
     print('Hello! Let\'s explore some US bikeshare data!')
     # TO DO: get user input for city (chicago, new york city, washington).
     # HINT: Use a while loop to handle invalid inputs
-    max_error = 3
+    maxError = 3
     city = ''
     while city.lower() not in CITY_DATA.keys():
         print("Enter city's name: Choose from:")
@@ -37,7 +37,7 @@ def get_filters():
     # TO DO: get user input for month (all, january, february, ... , june)
     month = ''
     count = 0
-    while month.lower() not in (['all', 'january', 'february', 'march', 'april', 'may', 'june']) and count < max_error:
+    while month.lower() not in (['all', 'january', 'february', 'march', 'april', 'may', 'june']) and count < maxError:
         month = input("Enter the month name: january to june \n")
         if month.lower() not in ['all', 'january', 'february', 'march', 'april', 'may', 'june']:
             print("You may want to try again.")
@@ -45,7 +45,7 @@ def get_filters():
         else:
             month = month.lower()
 
-    if count == max_error:
+    if count == maxError:
         print('max number of errors reached.')
         print('no filter applied for month; month = all')
         month = 'all'
@@ -54,7 +54,7 @@ def get_filters():
     day = ''
     count = 0
     while day.lower() not in (
-            ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']) and count < max_error:
+            ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']) and count < maxError:
         day = input("Enter the day of the week.\n")
         if day.lower() not in ['all', 'sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']:
             print("You may want to try again.\n")
@@ -64,7 +64,7 @@ def get_filters():
         else:
             day = day.title()
 
-    if count == max_error:
+    if count == maxError:
         print('max number of errors reached.')
         print('no filter applied for day of the week; day = all')
         day = 'all'
